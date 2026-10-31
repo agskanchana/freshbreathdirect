@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fresh Breath Direct — Logo Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,700;1,800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --indigo: #342F80;
+    --indigo-deep: #221E5C;
+    --cyan: #00C0F1;
+    --cyan-bright: #22D2FF;
+    --ice: #E8F8FD;
+    --paper: #F7F8FB;
+    --ink: #1E1B3A;
+    --muted: #6B6A85;
+    --line: #E3E4EE;
+    --card: #FFFFFF;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font: 400 16px/1.55 Roboto, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3, .cond { font-family: "Barlow Condensed", sans-serif; }
+
+  /* Hero */
+  header.hero {
+    background: var(--indigo); color: #fff; position: relative; overflow: hidden;
+    padding: 64px 0 56px;
+  }
+  header.hero::after {
+    content: ""; position: absolute; right: -120px; top: -160px; width: 520px; height: 520px;
+    border-radius: 50%; border: 60px solid rgba(0,192,241,.18);
+  }
+  header.hero::before {
+    content: ""; position: absolute; right: 180px; bottom: -90px; width: 180px; height: 180px;
+    border-radius: 50%; background: rgba(34,210,255,.14);
+  }
+  .eyebrow {
+    font: 700 13px/1 Roboto, sans-serif; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--cyan-bright);
+  }
+  header.hero h1 {
+    font-style: italic; font-weight: 800; text-transform: uppercase;
+    font-size: clamp(42px, 7vw, 84px); line-height: .92; margin: 14px 0 18px; letter-spacing: -.01em;
+  }
+  header.hero h1 span { color: var(--cyan-bright); }
+  header.hero p { max-width: 620px; margin: 0; color: rgba(255,255,255,.82); font-size: 17px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 34px; position: relative; z-index: 1; }
+  .meta div { font-size: 13px; color: rgba(255,255,255,.65); }
+  .meta strong { display: block; color: #fff; font-size: 15px; font-weight: 500; }
+
+  /* Brand strip */
+  .brand { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; margin: -28px auto 0; position: relative; z-index: 2; }
+  .panel { background: var(--card); border-radius: var(--radius); padding: 22px 24px; box-shadow: 0 10px 30px rgba(52,47,128,.08); }
+  .panel h3 { margin: 0 0 14px; font-size: 15px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-family: Roboto, sans-serif; }
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+  .sw { flex: 1 1 90px; }
+  .sw i { display: block; height: 56px; border-radius: 10px; border: 1px solid var(--line); }
+  .sw b { display: block; font-size: 13px; margin-top: 8px; font-weight: 500; }
+  .sw small { color: var(--muted); font-size: 12px; font-family: ui-monospace, Consolas, monospace; }
+  .type-sample { display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; }
+  .type-sample .big { font: italic 800 40px/1 "Barlow Condensed"; color: var(--indigo); text-transform: uppercase; }
+  .type-sample .small { color: var(--muted); font-size: 14px; }
+
+  /* Toolbar */
+  .toolbar {
+    position: sticky; top: 0; z-index: 10; background: rgba(247,248,251,.92);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); margin-top: 40px;
+  }
+  .toolbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 12px; padding-bottom: 12px; flex-wrap: wrap; }
+  .filters { display: flex; gap: 6px; flex-wrap: wrap; }
+  .filters button {
+    border: 1px solid var(--line); background: #fff; color: var(--ink); border-radius: 999px;
+    padding: 7px 14px; font: 500 14px Roboto, sans-serif; cursor: pointer; transition: .15s;
+  }
+  .filters button:hover { border-color: var(--cyan); }
+  .filters button[aria-pressed="true"] { background: var(--indigo); border-color: var(--indigo); color: #fff; }
+  .picks {
+    display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted);
+  }
+  .picks strong { color: var(--indigo); }
+  .btn {
+    border: 0; background: var(--cyan); color: var(--indigo-deep); font: 700 13px Roboto, sans-serif;
+    padding: 8px 14px; border-radius: 999px; cursor: pointer; letter-spacing: .02em;
+  }
+  .btn:disabled { opacity: .4; cursor: default; }
+
+  /* Sections */
+  section.round { padding: 48px 0 8px; }
+  .round-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 22px; }
+  .round-head h2 { margin: 6px 0 0; font-size: clamp(32px, 4vw, 46px); font-weight: 800; font-style: italic; text-transform: uppercase; color: var(--indigo); line-height: 1; }
+  .round-head p { margin: 0; max-width: 520px; color: var(--muted); }
+  .round-head .eyebrow { color: var(--cyan); }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 22px; }
+  .card {
+    background: var(--card); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line);
+    transition: transform .2s, box-shadow .2s, border-color .2s; display: flex; flex-direction: column;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(52,47,128,.12); }
+  .card.picked { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(0,192,241,.25); }
+  .thumb {
+    aspect-ratio: 4 / 3; background: #fff; display: grid; place-items: center; cursor: zoom-in;
+    border: 0; padding: 0; width: 100%; position: relative;
+  }
+  .thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .num {
+    position: absolute; left: 12px; top: 12px; font: 800 italic 18px/1 "Barlow Condensed";
+    background: var(--indigo); color: #fff; padding: 6px 9px 5px; border-radius: 8px;
+  }
+  .body { padding: 14px 16px 16px; display: flex; gap: 12px; align-items: flex-start; }
+  .body .txt { flex: 1; min-width: 0; }
+  .body h3 { margin: 0; font-size: 22px; font-weight: 700; color: var(--ink); line-height: 1.1; }
+  .body p { margin: 4px 0 0; font-size: 14px; color: var(--muted); line-height: 1.45; }
+  .tag {
+    display: inline-block; margin-top: 10px; font-size: 11px; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; padding: 3px 8px; border-radius: 6px; background: var(--ice); color: var(--indigo);
+  }
+  .tag.gemini { background: #EEF0FF; }
+  .heart {
+    flex: none; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: #fff;
+    display: grid; place-items: center; cursor: pointer; transition: .15s; color: #B9B8CC;
+  }
+  .heart:hover { border-color: var(--cyan); color: var(--cyan); }
+  .heart[aria-pressed="true"] { background: var(--cyan); border-color: var(--cyan); color: #fff; }
+  .heart svg { width: 20px; height: 20px; }
+
+  footer { padding: 56px 0 64px; color: var(--muted); font-size: 14px; }
+  footer .panel { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+  footer h3 { margin: 0; font: 800 italic 28px/1 "Barlow Condensed"; text-transform: uppercase; color: var(--indigo); letter-spacing: 0; }
+
+  /* Lightbox */
+  .lb { position: fixed; inset: 0; background: rgba(20,18,50,.92); display: none; z-index: 50; }
+  .lb.open { display: grid; grid-template-rows: 1fr auto; }
+  .lb figure { margin: 0; display: grid; place-items: center; padding: 56px 72px 12px; min-height: 0; }
+  .lb img { max-width: 100%; max-height: 100%; border-radius: 10px; background: #fff; }
+  .lb figcaption { color: #fff; text-align: center; padding: 8px 20px 26px; }
+  .lb figcaption b { font: 800 italic 26px/1.1 "Barlow Condensed"; text-transform: uppercase; display: block; }
+  .lb figcaption span { color: rgba(255,255,255,.7); font-size: 14px; }
+  .lb button.nav, .lb button.close {
+    position: absolute; border: 0; background: rgba(255,255,255,.12); color: #fff; width: 48px; height: 48px;
+    border-radius: 50%; cursor: pointer; font-size: 24px; display: grid; place-items: center;
+  }
+  .lb button:hover { background: var(--cyan); color: var(--indigo-deep); }
+  .lb .close { top: 14px; right: 14px; }
+  .lb .prev { left: 14px; top: 50%; transform: translateY(-50%); }
+  .lb .next { right: 14px; top: 50%; transform: translateY(-50%); }
+
+  .toast {
+    position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%) translateY(20px); opacity: 0;
+    background: var(--indigo); color: #fff; padding: 10px 18px; border-radius: 999px; font-size: 14px;
+    transition: .25s; pointer-events: none; z-index: 60;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  @media (max-width: 760px) {
+    .wrap { padding: 0 16px; }
+    .brand { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: 1fr; }
+    .lb figure { padding: 64px 12px 8px; }
+    .lb .prev, .lb .next { top: auto; bottom: 16px; transform: none; }
+    header.hero::after { width: 300px; height: 300px; right: -140px; top: -120px; border-width: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Logo concepts · Round 1 &amp; 2</div>
+    <h1>Fresh Breath <span>Direct</span></h1>
+    <p>Logo ideas for Fresh Breath Direct Ltd, experts in PaperMints. They all use the official PaperMints colours, so the brand fits alongside the other European distributors. Tap a logo to see it larger, and tap the heart to add it to your shortlist.</p>
+    <div class="meta">
+      <div><strong>Client</strong>Fresh Breath Direct Ltd</div>
+      <div><strong>Website</strong>freshbreathdirect.co.uk</div>
+      <div><strong>Concepts</strong><span id="count"></span> designs</div>
+      <div><strong>Date</strong>31 October 2026</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap brand">
+  <div class="panel">
+    <h3>Colours (from PaperMints)</h3>
+    <div class="swatches">
+      <div class="sw"><i style="background:#342F80"></i><b>Indigo</b><small>#342F80</small></div>
+      <div class="sw"><i style="background:#00C0F1"></i><b>Cyan</b><small>#00C0F1</small></div>
+      <div class="sw"><i style="background:#22D2FF"></i><b>Ice Blue</b><small>#22D2FF</small></div>
+      <div class="sw"><i style="background:#FFFFFF"></i><b>White</b><small>#FFFFFF</small></div>
+    </div>
+  </div>
+  <div class="panel">
+    <h3>Typography</h3>
+    <div class="type-sample">
+      <span class="big">Barlow Condensed</span>
+      <span class="small">Headlines, ExtraBold Italic<br>Roboto for body text</span>
+    </div>
+  </div>
+</div>
+
+<nav class="toolbar" aria-label="Filter concepts">
+  <div class="wrap">
+    <div class="filters" role="group">
+      <button data-f="all" aria-pressed="true">All</button>
+      <button data-f="r1" aria-pressed="false">Round 1</button>
+      <button data-f="r2" aria-pressed="false">Round 2</button>
+      <button data-f="picked" aria-pressed="false">My shortlist</button>
+    </div>
+    <div class="picks">
+      <span>Shortlist: <strong id="pickList">none yet</strong></span>
+      <button class="btn" id="copyPicks" disabled>Copy shortlist</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="round" id="r1">
+    <div class="round-head">
+      <div>
+        <div class="eyebrow">Round 1</div>
+        <h2>Bold &amp; Corporate</h2>
+      </div>
+      <p>These stay close to the PaperMints look: italic condensed lettering, swooshes, monograms and badges. The style is confident and suits trade buyers (B2B) as well as shoppers (B2C).</p>
+    </div>
+    <div class="grid" data-round="r1"></div>
+  </section>
+
+  <section class="round" id="r2">
+    <div class="round-head">
+      <div>
+        <div class="eyebrow">Round 2</div>
+        <h2>New Art Directions</h2>
+      </div>
+      <p>This round tries different personalities: luxury minimal, paper and origami, retro, line art, a mascot, Swiss modernism, brush script and an app-style gradient.</p>
+    </div>
+    <div class="grid" data-round="r2"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="panel">
+      <div>
+        <h3>Next steps</h3>
+        <p style="margin:6px 0 0">Choose 1–3 favourites and send me the numbers. I'll refine the chosen direction and supply the final logo as vector files (SVG, PDF and PNG), plus a white version and a favicon or app icon.</p>
+      </div>
+      <button class="btn" id="copyPicks2" disabled>Copy my shortlist</button>
+    </div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Logo preview">
+  <button class="close" aria-label="Close">✕</button>
+  <button class="nav prev" aria-label="Previous">‹</button>
+  <button class="nav next" aria-label="Next">›</button>
+  <figure><img alt=""></figure>
+  <figcaption><b></b><span></span></figcaption>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const LOGOS = [
+  // Round 1 — Codex
+  { r:"r1", src:"codex/c1-wordmark-condensed.png", name:"Speed Wordmark", note:"Italic condensed lettering like the PaperMints headlines, with \"Direct\" in cyan and a speed-line underline." },
+  { r:"r1", src:"codex/c2-speech-bubble.png", name:"Breath Bubble", note:"A cyan speech bubble with a mint leaf inside, next to a heavy rounded wordmark. Friendly and suited to shoppers." },
+  { r:"r1", src:"codex/c3-folded-strip-f.png", name:"Folded Strip F", note:"An \"F\" built from two folded paper mint strips. A premium nod to the paper format." },
+  { r:"r1", src:"codex/c4-fb-ligature.png", name:"fb Monogram", note:"The letters \"fb\" joined in a cyan circle, where the b forms a breath swirl. Modern lowercase wordmark." },
+  { r:"r1", src:"codex/c5-ice-crystal.png", name:"Ice Crystal", note:"A snowflake made from mint strips to suggest coolness, with a stacked bold wordmark." },
+  { r:"r1", src:"codex/c6-dark-version.png", name:"Reverse Wave", note:"A white wordmark with a cyan wave on indigo. Built for dark backgrounds." },
+  // Round 1 — Gemini
+  { r:"r1", src:"gemini/g1-breath-swoosh.jpg", name:"Breeze Swoosh", note:"Italic condensed caps with cool breath swirls trailing behind them." },
+  { r:"r1", src:"gemini/g2-mint-strip-icon.jpg", name:"Mint Strip", note:"A tilted mint strip with a sparkle and spaced-out \"DIRECT\" lettering. The design that says most about the product." },
+  { r:"r1", src:"gemini/g3-fbd-monogram.jpg", name:"FBD Monogram", note:"An \"FBD\" app-style icon with a cyan wave running through it. Works well as a favicon or social media picture." },
+  { r:"r1", src:"gemini/g4-cool-pearl.jpg", name:"Cool Pearl", note:"A mint-pearl circle (a nod to CoolCaps) with a lowercase wordmark and an italic \"DIRECT\"." },
+  { r:"r1", src:"gemini/g5-breath-arrow.jpg", name:"Breath Arrow", note:"Breath lines that turn into a forward arrow, meaning fresh breath delivered direct. Strong for trade customers." },
+  { r:"r1", src:"gemini/g6-badge.jpg", name:"Seal Badge", note:"A round seal with a mint leaf and breath swirl. Works for stickers, packaging and a trade stamp." },
+  // Round 2 — Codex
+  { r:"r2", src:"codex-v2/d1-luxury-minimal.png", name:"Apothecary", note:"Luxury minimal: a refined serif, a hairline rule and a fine-line leaf. Feels like a boutique fragrance brand." },
+  { r:"r2", src:"codex-v2/d2-paper-plane.png", name:"Paper Plane", note:"A mint strip folded into a paper plane: paper mints, delivered direct." },
+  { r:"r2", src:"codex-v2/d3-negative-space-b.png", name:"Arrow B", note:"A bold \"B\" with a breath wave and a forward arrow cut into it. Very easy to remember." },
+  { r:"r2", src:"codex-v2/d4-retro-stripes.png", name:"Retro Stripes", note:"Chunky 70s lettering with flowing stripes. Fun and confident." },
+  { r:"r2", src:"codex-v2/d5-line-art-profile.png", name:"Line Art Profile", note:"A single-line face breathing out a breath that becomes a mint leaf. Elegant and modern." },
+  { r:"r2", src:"codex-v2/d6-capsule-pill.png", name:"Capsule", note:"The whole logo sits inside a two-tone capsule, a nod to CoolCaps. Bold and works well on packaging." },
+  // Round 2 — Gemini
+  { r:"r2", src:"gemini-v2/e1-zen-enso.jpg", name:"Zen Enso", note:"A brushstroke circle with a mint leaf inside. Calm, airy and premium." },
+  { r:"r2", src:"gemini-v2/e2-origami-leaf.jpg", name:"Origami Leaf", note:"A mint leaf made of folded paper facets, a nod to the paper strips." },
+  { r:"r2", src:"gemini-v2/e3-mascot-pearl.jpg", name:"Mint Buddy", note:"A friendly mint-pearl mascot. Approachable and great for social media." },
+  { r:"r2", src:"gemini-v2/e4-swiss-modernist.jpg", name:"Swiss Modern", note:"Stacked bold lowercase lettering where the full stop is a mint pearl. Clean and editorial." },
+  { r:"r2", src:"gemini-v2/e5-brush-script.jpg", name:"Brush Script", note:"Hand-lettered \"Fresh Breath\" whose last letter sweeps into a breath swirl. Crafted and energetic." },
+  { r:"r2", src:"gemini-v2/e6-gradient-app.jpg", name:"App Gradient", note:"An indigo-to-cyan app icon with a breath wave and sparkle. Digital, startup feel." },
+];
+LOGOS.forEach((l, i) => { l.n = String(i + 1).padStart(2, "0"); });
+
+const KEY = "fbd-logo-picks";
+let picks = new Set();
+try { picks = new Set(JSON.parse(localStorage.getItem(KEY) || "[]")); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify([...picks])); } catch (e) {} };
+
+const heart = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.6 1.1 4.3 2.5h2c.7-1.4 2.2-2.5 4.3-2.5 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/></svg>';
+
+document.getElementById("count").textContent = LOGOS.length;
+
+function render() {
+  document.querySelectorAll(".grid").forEach(g => {
+    g.innerHTML = LOGOS.filter(l => l.r === g.dataset.round).map(l => `
+      <article class="card${picks.has(l.n) ? " picked" : ""}" data-n="${l.n}" data-r="${l.r}">
+        <button class="thumb" data-open="${l.n}" aria-label="View concept ${l.n} larger">
+          <img src="${l.src}" alt="Concept ${l.n}: ${l.name}" loading="lazy">
+          <span class="num">${l.n}</span>
+        </button>
+        <div class="body">
+          <div class="txt">
+            <h3 class="cond">${l.name}</h3>
+            <p>${l.note}</p>
+          </div>
+          <button class="heart" data-pick="${l.n}" aria-pressed="${picks.has(l.n)}" aria-label="Add concept ${l.n} to shortlist">${heart}</button>
+        </div>
+      </article>`).join("");
+  });
+  applyFilter();
+  updatePicks();
+}
+
+let filter = "all";
+function applyFilter() {
+  document.querySelectorAll(".card").forEach(c => {
+    const show = filter === "all" || c.dataset.r === filter || (filter === "picked" && picks.has(c.dataset.n));
+    c.style.display = show ? "" : "none";
+  });
+  document.querySelectorAll("section.round").forEach(s => {
+    const any = [...s.querySelectorAll(".card")].some(c => c.style.display !== "none");
+    s.style.display = any ? "" : "none";
+  });
+}
+
+function pickText() {
+  const sel = LOGOS.filter(l => picks.has(l.n));
+  return sel.map(l => `${l.n} ${l.name}`).join(", ");
+}
+function updatePicks() {
+  const t = pickText();
+  document.getElementById("pickList").textContent = t || "none yet";
+  ["copyPicks", "copyPicks2"].forEach(id => document.getElementById(id).disabled = !t);
+}
+
+document.querySelector(".filters").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  filter = b.dataset.f;
+  document.querySelectorAll(".filters button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  applyFilter();
+});
+
+document.addEventListener("click", e => {
+  const p = e.target.closest("[data-pick]");
+  if (p) {
+    const n = p.dataset.pick;
+    picks.has(n) ? picks.delete(n) : picks.add(n);
+    save();
+    p.setAttribute("aria-pressed", picks.has(n));
+    p.closest(".card").classList.toggle("picked", picks.has(n));
+    updatePicks(); if (filter === "picked") applyFilter();
+    return;
+  }
+  const o = e.target.closest("[data-open]");
+  if (o) openLb(LOGOS.findIndex(l => l.n === o.dataset.open));
+});
+
+function toast(msg) {
+  const t = document.getElementById("toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove("show"), 1800);
+}
+async function copyPicks() {
+  const msg = `Fresh Breath Direct logo shortlist: ${pickText()}`;
+  try { await navigator.clipboard.writeText(msg); toast("Shortlist copied. Paste it into WhatsApp or email."); }
+  catch (e) { prompt("Copy your shortlist:", msg); }
+}
+document.getElementById("copyPicks").onclick = copyPicks;
+document.getElementById("copyPicks2").onclick = copyPicks;
+
+// Lightbox
+const lb = document.getElementById("lb");
+let cur = 0;
+function visibleIdx() {
+  return LOGOS.map((l, i) => i).filter(i => {
+    const c = document.querySelector(`.card[data-n="${LOGOS[i].n}"]`);
+    return c && c.style.display !== "none";
+  });
+}
+function openLb(i) {
+  cur = i; const l = LOGOS[i];
+  lb.querySelector("img").src = l.src; lb.querySelector("img").alt = `Concept ${l.n}: ${l.name}`;
+  lb.querySelector("figcaption b").textContent = `${l.n} · ${l.name}`;
+  lb.querySelector("figcaption span").textContent = l.note;
+  lb.classList.add("open"); document.body.style.overflow = "hidden";
+}
+function closeLb() { lb.classList.remove("open"); document.body.style.overflow = ""; }
+function step(d) {
+  const v = visibleIdx(); const k = v.indexOf(cur);
+  openLb(v[(k + d + v.length) % v.length]);
+}
+lb.querySelector(".close").onclick = closeLb;
+lb.querySelector(".prev").onclick = () => step(-1);
+lb.querySelector(".next").onclick = () => step(1);
+lb.addEventListener("click", e => { if (e.target === lb || e.target.tagName === "FIGURE") closeLb(); });
+document.addEventListener("keydown", e => {
+  if (!lb.classList.contains("open")) return;
+  if (e.key === "Escape") closeLb();
+  if (e.key === "ArrowLeft") step(-1);
+  if (e.key === "ArrowRight") step(1);
+});
+
+render();
+</script>
+</body>
+</html>
