@@ -298,7 +298,10 @@ const LOGOS = [
   { r:"r2", src:"gemini-v2/e5-brush-script.jpg", name:"Brush Script", note:"Hand-lettered \"Fresh Breath\" whose last letter sweeps into a breath swirl. Crafted and energetic." },
   { r:"r2", src:"gemini-v2/e6-gradient-app.jpg", name:"App Gradient", note:"An indigo-to-cyan app icon with a breath wave and sparkle. Digital, startup feel." },
 ];
-LOGOS.forEach((l, i) => { l.n = String(i + 1).padStart(2, "0"); });
+LOGOS.forEach((l, i) => {
+  l.n = String(i + 1).padStart(2, "0");
+  l.thumb = "thumbs/" + l.src.split("/").pop().replace(/\.\w+$/, ".jpg");
+});
 
 const KEY = "fbd-logo-picks";
 let picks = new Set();
@@ -314,7 +317,7 @@ function render() {
     g.innerHTML = LOGOS.filter(l => l.r === g.dataset.round).map(l => `
       <article class="card${picks.has(l.n) ? " picked" : ""}" data-n="${l.n}" data-r="${l.r}">
         <button class="thumb" data-open="${l.n}" aria-label="View concept ${l.n} larger">
-          <img src="${l.src}" alt="Concept ${l.n}: ${l.name}" loading="lazy">
+          <img src="${l.thumb}" alt="Concept ${l.n}: ${l.name}" decoding="async">
           <span class="num">${l.n}</span>
         </button>
         <div class="body">
