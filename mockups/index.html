@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fresh Breath Direct: Website Mockups</title>
+<meta name="description" content="Round 1 website mockups for Fresh Breath Direct: four looks for the consumer shop.">
+<link rel="icon" href="shared/img/brand/buddy-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;1,800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --indigo: #342F80; --indigo-deep: #221E5C; --cyan: #00C0F1; --cyan-bright: #22D2FF;
+    --ice: #E8F8FD; --paper: #F7F8FB; --ink: #1E1B3A; --muted: #62617E; --line: #E3E4EE; --radius: 16px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 400 16px/1.55 Roboto, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .cond { font-family: "Barlow Condensed", sans-serif; font-style: italic; font-weight: 800; text-transform: uppercase; line-height: .92; }
+
+  .top { background: var(--indigo); color: #fff; position: relative; overflow: hidden; padding: 36px 0 120px; }
+  .top::after { content: ""; position: absolute; right: -140px; top: -180px; width: 560px; height: 560px; border-radius: 50%; border: 64px solid rgba(0, 192, 241, .16); }
+  .top-logo { width: 190px; height: auto; position: relative; z-index: 1; }
+  .top h1 { position: relative; z-index: 1; font-size: clamp(48px, 8vw, 96px); margin: 46px 0 18px; }
+  .top p { position: relative; z-index: 1; max-width: 640px; margin: 0; font-size: 18px; color: rgba(255, 255, 255, .85); }
+  .facts { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 14px 34px; margin: 30px 0 0; padding: 0; list-style: none; }
+  .facts li { font-size: 14px; color: rgba(255, 255, 255, .7); }
+  .facts b { display: block; color: #fff; font-weight: 500; font-size: 15px; }
+
+  .howto { position: relative; z-index: 2; margin-top: -76px; }
+  .howto-card { background: #fff; border-radius: var(--radius); box-shadow: 0 14px 40px rgba(52, 47, 128, .12); padding: 22px 26px; display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+  .howto-card p { margin: 0; max-width: 660px; }
+  .howto-card b { color: var(--indigo); }
+  .picks { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
+  .picks strong { color: var(--indigo); font-size: 16px; }
+  .copy { border: 0; background: var(--cyan); color: var(--indigo-deep); font: 700 14px Roboto, sans-serif; padding: 11px 18px; border-radius: 999px; cursor: pointer; }
+  .copy:disabled { opacity: .45; cursor: default; }
+  .copy:focus-visible, .open:focus-visible, .heart:focus-visible { outline: 3px solid var(--indigo); outline-offset: 3px; }
+
+  .dirs { padding: 46px 0 20px; display: grid; gap: 34px; }
+  .dir { display: grid; grid-template-columns: 1.25fr 1fr; background: #fff; border-radius: var(--radius); border: 1px solid var(--line); overflow: hidden; transition: box-shadow .2s, border-color .2s; }
+  .dir:hover { box-shadow: 0 18px 40px rgba(52, 47, 128, .1); }
+  .dir.picked { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(0, 192, 241, .25); }
+  .shots { position: relative; display: block; padding: 26px 70px 26px 26px; background: var(--ice); }
+  .shots img { height: auto; }
+  .shots .desk { border-radius: 10px; box-shadow: 0 16px 34px rgba(20, 16, 70, .22); aspect-ratio: 1200 / 750; width: 100%; object-fit: cover; }
+  .shots .mob { position: absolute; right: 18px; bottom: 16px; width: 22%; max-width: 132px; border-radius: 16px; border: 4px solid #1b1940; box-shadow: 0 16px 30px rgba(20, 16, 70, .3); aspect-ratio: 390 / 844; object-fit: cover; }
+  .num { position: absolute; left: 14px; top: 14px; z-index: 2; font: italic 800 20px/1 "Barlow Condensed"; background: var(--indigo); color: #fff; padding: 7px 10px 6px; border-radius: 8px; }
+  .info { padding: 30px 30px 26px; display: flex; flex-direction: column; }
+  .info h2 { font-size: 44px; color: var(--indigo); margin: 0; }
+  .info .what { margin: 12px 0 0; font-size: 17px; }
+  .info dl { margin: 18px 0 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 14.5px; }
+  .info dt { color: var(--muted); }
+  .info dd { margin: 0; }
+  .chips { display: inline-flex; gap: 5px; vertical-align: middle; }
+  .chips i { width: 18px; height: 18px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .12); display: inline-block; }
+  .actions { margin-top: auto; padding-top: 24px; display: flex; gap: 10px; align-items: center; }
+  .open { flex: 1; display: inline-flex; align-items: center; justify-content: center; min-height: 50px; border-radius: 999px; background: var(--indigo); color: #fff; text-decoration: none; font: italic 800 21px/1 "Barlow Condensed"; text-transform: uppercase; letter-spacing: .02em; }
+  .open:hover { background: var(--indigo-deep); }
+  .heart { flex: none; width: 50px; height: 50px; border-radius: 50%; border: 1px solid var(--line); background: #fff; display: grid; place-items: center; cursor: pointer; color: #B9B8CC; }
+  .heart:hover { border-color: var(--cyan); color: var(--cyan); }
+  .heart[aria-pressed="true"] { background: var(--cyan); border-color: var(--cyan); color: #fff; }
+  .heart svg { width: 22px; height: 22px; }
+
+  .next { padding: 30px 0 10px; }
+  .next-card { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  .box { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 28px; }
+  .box h2 { font-size: 34px; color: var(--indigo); margin: 0 0 12px; }
+  .box p, .box li { color: var(--ink); font-size: 15.5px; }
+  .box ul { margin: 0; padding-left: 20px; }
+  .box li { margin: 0 0 8px; }
+  .box.dashed { border-style: dashed; border-color: #C9CBE0; background: transparent; }
+  footer { padding: 40px 0 60px; color: var(--muted); font-size: 14px; }
+
+  .toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px); opacity: 0; transition: .25s; background: var(--ink); color: #fff; padding: 12px 18px; border-radius: 12px; font-size: 15px; pointer-events: none; max-width: 90vw; }
+  .toast.on { opacity: 1; transform: translate(-50%, 0); }
+
+  @media (max-width: 900px) {
+    .dir { grid-template-columns: 1fr; }
+    .next-card { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .wrap { padding: 0 16px; }
+    .top { padding-bottom: 110px; }
+    .top-logo { width: 150px; height: auto; }
+    .top h1 { margin-top: 34px; }
+    .top p { font-size: 16.5px; }
+    .howto-card { padding: 18px; }
+    .shots { padding: 16px 54px 16px 16px; }
+    .shots .mob { right: 10px; bottom: 10px; border-width: 3px; border-radius: 12px; }
+    .info { padding: 22px 20px 20px; }
+    .info h2 { font-size: 38px; }
+    .box { padding: 22px 20px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .toast, .dir { transition: none; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <img class="top-logo" src="shared/img/brand/logo-white.png" alt="Fresh Breath Direct, experts in PaperMints" width="925" height="366">
+    <h1 class="cond">Your shop, four ways</h1>
+    <p>Round 1 of the website mockups: the consumer shop (B2C). Each design is a working homepage, so tap around, add things to the basket and try the buttons. They work on your phone too.</p>
+    <ul class="facts">
+      <li><b>Mint Buddy logo</b>Your pick, number 21</li>
+      <li><b>Official PaperMints packs</b>Real product photos throughout</li>
+      <li><b>Same content in all four</b>So you can compare the look</li>
+    </ul>
+  </div>
+</header>
+
+<section class="howto">
+  <div class="wrap">
+    <div class="howto-card">
+      <p><b>How to choose:</b> tap the heart on the ones you like, then copy your picks and paste them to me on WhatsApp. Mixing is welcome, for example the photos of one with the colours of another.</p>
+      <div class="picks"><span><strong id="pickCount">0</strong> picked</span><button class="copy" id="copyBtn" type="button" disabled>Copy my picks</button></div>
+    </div>
+  </div>
+</section>
+
+<main class="wrap dirs" id="dirs"></main>
+
+<section class="next">
+  <div class="wrap next-card">
+    <div class="box">
+      <h2 class="cond">Good to know</h2>
+      <ul>
+        <li>Product photos are PaperMints' official images. The lifestyle photos and the Buddy poses were made for these mockups and can be swapped for your PaperMints photo bank.</li>
+        <li>Product facts follow PaperMints' own ingredient pages, for example 0.48 kcal per pearl, halal bovine gelatin, soy in CoolCaps and milk in Strips. The odour test is described as a lab test, not a clinical trial.</li>
+        <li>Please check a few things for me: the prices of the CoolCaps Twist and Strawberry Strips, the 7,700+ eBay figure, the company number, and that CoolCaps are made in Japan. The Fresh Kit bundle and the 10% first-order offer are just ideas.</li>
+      </ul>
+    </div>
+    <div class="box dashed">
+      <h2 class="cond">Coming next</h2>
+      <p>Once you've picked a direction, I'll design the trade (B2B) site to match: trade sign-up, wholesale prices, quick re-order and the free counter display offer. Then I'll start building on WordPress.</p>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">Mockups by Sam for Fresh Breath Direct, November 2026.</div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+  var DIRS = [
+    { n: "1", slug: "b2c-1-instant-fresh", name: "Instant Fresh",
+      what: "PaperMints' own look, turned up loud: bold italic headlines, die-cut stickers and big product shots. The closest match to papermints.eu.",
+      best: "Shoppers who already know the PaperMints packs", feel: "Bold, retail, energetic",
+      chips: ["#342F80", "#00C0F1", "#FFE433", "#E4252E"] },
+    { n: "2", slug: "b2c-2-mint-buddy", name: "Mint Buddy",
+      what: "Your new mascot runs the show. Friendly and rounded, with a three-tap quiz that picks the right product for each customer.",
+      best: "Families, gifting and social media", feel: "Playful, warm, memorable",
+      chips: ["#1F1A66", "#22C8EC", "#DDF5FC", "#FFE27A"] },
+    { n: "3", slug: "b2c-3-fresh-science", name: "Fresh Science",
+      what: "Calm, clean and credible. An interactive diagram of the double pearl, the lab results as a chart, and full ingredients and allergens.",
+      best: "Pharmacy shoppers, keto dieters, people who want proof", feel: "Premium, clinical, trustworthy",
+      chips: ["#1B1946", "#342F80", "#00C0F1", "#F2F6F9"] },
+    { n: "4", slug: "b2c-4-after-dark", name: "After Dark",
+      what: "Cinematic night-time photography and a timeline of five close calls, from client drinks to the taxi home.",
+      best: "Young professionals, dates and nights out", feel: "Moody, premium, aspirational",
+      chips: ["#0E0B2B", "#1E1958", "#36D6FF", "#EEF6FF"] }
+  ];
+  var heart = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.6 1.1 4.3 2.5h2c.7-1.4 2.2-2.5 4.3-2.5 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/></svg>';
+  var KEY = "fbd-b2c-picks", picks = new Set();
+  try { picks = new Set(JSON.parse(localStorage.getItem(KEY) || "[]")); } catch (e) {}
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(Array.from(picks))); } catch (e) {} }
+
+  document.getElementById("dirs").innerHTML = DIRS.map(function (d) {
+    var img = "shared/img/thumbs/" + d.slug;
+    return '<article class="dir" data-n="' + d.n + '">' +
+      '<a class="shots" href="' + d.slug + '/" aria-label="Open mockup ' + d.n + ': ' + d.name + '">' +
+        '<span class="num">' + d.n + '</span>' +
+        '<img class="desk" src="' + img + '-desktop.webp" alt="Desktop view of the ' + d.name + ' homepage" width="1200" height="750" loading="lazy">' +
+        '<img class="mob" src="' + img + '-mobile.webp" alt="Phone view of the ' + d.name + ' homepage" width="390" height="844" loading="lazy">' +
+      '</a>' +
+      '<div class="info">' +
+        '<h2 class="cond">' + d.name + '</h2>' +
+        '<p class="what">' + d.what + '</p>' +
+        '<dl><dt>Feels</dt><dd>' + d.feel + '</dd><dt>Best for</dt><dd>' + d.best + '</dd>' +
+        '<dt>Colours</dt><dd><span class="chips">' + d.chips.map(function (c) { return '<i style="background:' + c + '"></i>'; }).join("") + '</span></dd></dl>' +
+        '<div class="actions"><a class="open" href="' + d.slug + '/">Open mockup ' + d.n + '</a>' +
+        '<button class="heart" type="button" data-pick="' + d.n + '" aria-pressed="false" aria-label="Add ' + d.name + ' to your picks">' + heart + '</button></div>' +
+      '</div></article>';
+  }).join("");
+
+  function update() {
+    document.querySelectorAll(".dir").forEach(function (el) {
+      var on = picks.has(el.getAttribute("data-n"));
+      el.classList.toggle("picked", on);
+      el.querySelector(".heart").setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    document.getElementById("pickCount").textContent = picks.size;
+    document.getElementById("copyBtn").disabled = picks.size === 0;
+  }
+  document.addEventListener("click", function (e) {
+    var h = e.target.closest("[data-pick]");
+    if (!h) return;
+    var n = h.getAttribute("data-pick");
+    if (picks.has(n)) picks.delete(n); else picks.add(n);
+    save(); update();
+  });
+  var toast = document.getElementById("toast"), tt;
+  function say(t) { toast.textContent = t; toast.classList.add("on"); clearTimeout(tt); tt = setTimeout(function () { toast.classList.remove("on"); }, 2800); }
+  document.getElementById("copyBtn").addEventListener("click", function () {
+    var list = DIRS.filter(function (d) { return picks.has(d.n); }).map(function (d) { return d.n + " " + d.name; }).join(", ");
+    var text = "Fresh Breath Direct shop mockup picks: " + list;
+    function done() { say("Copied. Paste it to Sam on WhatsApp."); }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, function () { window.prompt("Copy your picks:", text); });
+    else window.prompt("Copy your picks:", text);
+  });
+  update();
+</script>
+</body>
+</html>

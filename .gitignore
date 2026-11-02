@@ -1,0 +1,9 @@
+# Private client material: never publish on the public Pages site
+Gareth/
+Gareth.zip
+*.pdf
+Premium_Breath_Freshener_Product_Overview.png
+logos-19-24-for-gareth/
+
+# Full-size Codex originals (pages use the WebP copies in mockups/shared/img/web/)
+mockups/shared/img/gen/**/*.png
