@@ -64,6 +64,9 @@
   .heart:hover { border-color: var(--cyan); color: var(--cyan); }
   .heart[aria-pressed="true"] { background: var(--cyan); border-color: var(--cyan); color: #fff; }
   .heart svg { width: 22px; height: 22px; }
+  .dir-r2 { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(0, 192, 241, .25), 0 18px 40px rgba(52, 47, 128, .14); background: #fff; }
+  .dir-r2 .num { background: var(--cyan); color: var(--indigo-deep); }
+  .r1-note { margin-top: 26px; }
 
   .next { padding: 30px 0 10px; }
   .next-card { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
@@ -103,20 +106,33 @@
 <header class="top">
   <div class="wrap">
     <img class="top-logo" src="shared/img/brand/logo-white.png" alt="Fresh Breath Direct, experts in PaperMints" width="925" height="366">
-    <h1 class="cond">Your shop, four ways</h1>
-    <p>Round 1 of the website mockups: the consumer shop (B2C). Each design is a working homepage, so tap around, add things to the basket and try the buttons. They work on your phone too.</p>
+    <h1 class="cond">Your shop, round 2</h1>
+    <p>You picked the PaperMints look of mockup 1, with Buddy from mockup 2. Here they are together, now using PaperMints' official photos from Picflow. It's a working homepage, so tap around and try the quiz. It works on your phone too.</p>
     <ul class="facts">
-      <li><b>Mint Buddy logo</b>Your pick, number 21</li>
-      <li><b>Official PaperMints packs</b>Real product photos throughout</li>
-      <li><b>Same content in all four</b>So you can compare the look</li>
+      <li><b>Mockup 1 look</b>Matches the PaperMints branding</li>
+      <li><b>Buddy throughout</b>Hero, quiz, sign-up and social</li>
+      <li><b>Official Picflow photos</b>People, packs and lifestyle shots</li>
     </ul>
   </div>
 </header>
 
 <section class="howto">
   <div class="wrap">
-    <div class="howto-card">
-      <p><b>How to choose:</b> tap the heart on the ones you like, then copy your picks and paste them to me on WhatsApp. Mixing is welcome, for example the photos of one with the colours of another.</p>
+    <article class="dir dir-r2">
+      <a class="shots" href="b2c-r2-instant-fresh-buddy/" aria-label="Open round 2: Instant Fresh plus Buddy">
+        <span class="num">R2</span>
+        <img class="desk" src="shared/img/thumbs/b2c-r2-instant-fresh-buddy-desktop.webp" alt="Desktop view of the round 2 homepage" width="1200" height="750">
+        <img class="mob" src="shared/img/thumbs/b2c-r2-instant-fresh-buddy-mobile.webp" alt="Phone view of the round 2 homepage" width="390" height="844">
+      </a>
+      <div class="info">
+        <h2 class="cond">Instant Fresh + Buddy</h2>
+        <p class="what">Mockup 1's PaperMints look, with Buddy as the shop's friendly face and the three-tap quiz from mockup 2.</p>
+        <dl><dt>New</dt><dd>Real PaperMints people, packs and lifestyle photos from Picflow</dd><dt>Buddy</dt><dd>Hero sticker, quiz, Fresh Kit, social feed, Fresh Club and footer</dd><dt>Added</dt><dd>A "Follow the fresh" social strip for Instagram and TikTok</dd></dl>
+        <div class="actions"><a class="open" href="b2c-r2-instant-fresh-buddy/">Open round 2</a></div>
+      </div>
+    </article>
+    <div class="howto-card r1-note">
+      <p><b>Round 1, for reference:</b> the four original directions are below. You picked 1 and 2.</p>
       <div class="picks"><span><strong id="pickCount">0</strong> picked</span><button class="copy" id="copyBtn" type="button" disabled>Copy my picks</button></div>
     </div>
   </div>
@@ -129,14 +145,15 @@
     <div class="box">
       <h2 class="cond">Good to know</h2>
       <ul>
-        <li>Product photos are PaperMints' official images. The lifestyle photos and the Buddy poses were made for these mockups and can be swapped for your PaperMints photo bank.</li>
+        <li>Round 2 uses PaperMints' official Picflow photos. I left out a few Picflow ads that show the Arabic-market pack.</li>
+        <li>The Instagram handle @freshbreathdirect is a placeholder until your social accounts are set up.</li>
         <li>Product facts follow PaperMints' own ingredient pages, for example 0.48 kcal per pearl, halal bovine gelatin, soy in CoolCaps and milk in Strips. The odour test is described as a lab test, not a clinical trial.</li>
         <li>Please check a few things for me: the prices of the CoolCaps Twist and Strawberry Strips, the 7,700+ eBay figure, the company number, and that CoolCaps are made in Japan. The Fresh Kit bundle and the 10% first-order offer are just ideas.</li>
       </ul>
     </div>
     <div class="box dashed">
       <h2 class="cond">Coming next</h2>
-      <p>Once you've picked a direction, I'll design the trade (B2B) site to match: trade sign-up, wholesale prices, quick re-order and the free counter display offer. Then I'll start building on WordPress.</p>
+      <p>Once you're happy with round 2, I'll design the trade (B2B) site to match: trade sign-up, wholesale prices, quick re-order and the free counter display offer. Then I'll start building on WordPress.</p>
     </div>
   </div>
 </section>

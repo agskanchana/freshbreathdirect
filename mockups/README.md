@@ -2,6 +2,12 @@
 
 Static HTML/CSS/JS homepage mockups for Gareth to choose a direction. Open `index.html` (the hub).
 
+## Round 2 (current): `b2c-r2-instant-fresh-buddy/`
+
+Gareth (10 Nov 2026) picked mockup 1 for the look, because PaperMints want every distributor to share its branding, plus mockup 2's Buddy for his own B2C and social personality. Round 2 loads mockup 1's stylesheet and adds `style.css` overrides: Picflow ambassadors in the hero with a Buddy sticker, the quiz restyled, real Picflow lifestyle photos, a social strip, and Buddy in the Fresh Kit, Fresh Club and footer.
+
+Picflow assets: PaperMints' library at papermints.picflow.com/Marketing (51 galleries). Downloads live in `../picflow/` (git-ignored); web copies used by the page are in `shared/img/picflow/`. Picflow ads showing the Arabic-market pack are excluded. Downloaded so far: CoolCaps Mints, CoolCaps Strawberry, Mix Products, Mouth Sprays, PaperMints Strips, Strips Videos, Promotional materials. Still to download: the main-gallery brand artwork (logo, mouth graphics) and the lifestyle theme galleries.
+
 ## Round 1: consumer shop (B2C)
 
 | Folder | Direction | Memorable piece |

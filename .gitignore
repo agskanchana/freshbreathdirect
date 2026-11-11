@@ -7,3 +7,6 @@ logos-19-24-for-gareth/
 
 # Full-size Codex originals (pages use the WebP copies in mockups/shared/img/web/)
 mockups/shared/img/gen/**/*.png
+
+# PaperMints Picflow downloads (licensed brand material, local only)
+/picflow/

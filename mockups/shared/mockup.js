@@ -15,17 +15,25 @@
   };
 
   function buildNav() {
-    var n = parseInt(document.body.getAttribute("data-mockup"), 10);
-    if (!n || location.search.indexOf("shot") > -1) return;
-    var cur = MOCKUPS[n - 1];
-    var prev = MOCKUPS[(n - 2 + MOCKUPS.length) % MOCKUPS.length];
-    var next = MOCKUPS[n % MOCKUPS.length];
+    var key = document.body.getAttribute("data-mockup");
+    if (!key || location.search.indexOf("shot") > -1) return;
+    var cur, prev, next, label;
+    if (key === "r2") {
+      // Round 2 sits between its two parents: mockup 1 (look) and mockup 2 (Buddy)
+      cur = { name: "Instant Fresh + Buddy" }; prev = MOCKUPS[0]; next = MOCKUPS[1]; label = "Round 2";
+    } else {
+      var n = parseInt(key, 10);
+      cur = MOCKUPS[n - 1];
+      prev = MOCKUPS[(n - 2 + MOCKUPS.length) % MOCKUPS.length];
+      next = MOCKUPS[n % MOCKUPS.length];
+      label = "Mockup " + n + " of " + MOCKUPS.length;
+    }
     var nav = document.createElement("nav");
     nav.className = "mk-nav";
     nav.setAttribute("aria-label", "Mockup navigation");
     nav.innerHTML =
       '<a class="mk-icon" href="../' + prev.slug + '/" aria-label="Previous mockup: ' + prev.name + '">' + ico.prev + "</a>" +
-      '<span class="mk-title"><span>Mockup ' + n + " of " + MOCKUPS.length + "</span><b>" + cur.name + "</b></span>" +
+      '<span class="mk-title"><span>' + label + "</span><b>" + cur.name + "</b></span>" +
       '<a class="mk-icon" href="../' + next.slug + '/" aria-label="Next mockup: ' + next.name + '">' + ico.next + "</a>" +
       '<a href="../" aria-label="All mockups">' + ico.grid + '<span class="mk-all-label">All mockups</span></a>' +
       '<button class="mk-icon" type="button" aria-label="Hide this bar">' + ico.hide + "</button>";
